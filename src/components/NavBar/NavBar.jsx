@@ -15,7 +15,7 @@ const styles = theme => ({
     flexGrow: 1,
   },
   button: {
-    margin: theme.spacing.unit * 2,
+    margin: theme.spacing(2),
   },
   menuButton: {
     marginRight: 2,
@@ -43,12 +43,12 @@ class NavBar extends React.Component {
         <AppBar position="static" >
           <Toolbar>
 
-            <Typography variant="h6" className={classes.title}>
+            <Typography variant="h4" color="secondary" className={classes.title}>
               Joseph J Serrato 
-          </Typography>
-            <Button className={classes.button} color="inherit" href="/Cards" >Projects</Button>
-            <Button className={classes.button} color="inherit">About</Button>
-            <Button className={classes.button} color="inherit">Contact</Button>
+          </Typography >
+            <Button className={classes.button} color="secondary" href="/Cards" >Projects</Button>
+            <Button className={classes.button} color="secondary">About</Button>
+            <Button className={classes.button} color="secondary">Contact</Button>
           </Toolbar>
         </AppBar>
       </div>

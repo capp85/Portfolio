@@ -19,9 +19,9 @@ import Button from '@material-ui/core/Button';
 const styles = theme => ({
     layout: {
 		width: 'auto',
-		marginLeft: theme.spacing.unit * 3,
-		marginRight: theme.spacing.unit * 3,
-		[theme.breakpoints.up(1100 + theme.spacing.unit * 3 * 2)]: {
+		marginLeft: theme.spacing(3),
+		marginRight: theme.spacing(3),
+		[theme.breakpoints.up(1100 + theme.spacing(3) * (2) )]: {
 			width: 1100,
 			marginLeft: 'auto',
 			marginRight: 'auto',
@@ -41,6 +41,7 @@ const styles = theme => ({
     cardContent: {
         flexGrow: 1,
     },
+  
 
 });
 
@@ -49,7 +50,7 @@ const cards = [
 
         "key": 1,
         "name": "Be Prepared",
-        "image": "https://be-prepared-project.herokuapp.com/",
+        "image": "../images/BP-image.png",
         "technology": "Technology: Mongo, Express, React, Node, Axios, Bcrypt, Heroku, Material UI, JSON, QR Codes",
         "href": "https://be-prepared-project.herokuapp.com/",
     },
@@ -57,7 +58,7 @@ const cards = [
 
         "key": 2,
         "name": "Test Yo Self",
-        "image": "http://testyoselves.herokuapp.com/",
+        "image": "../images/TYS-image.png",
         "technology": "Technology: Express, Handlebars, Joi, MySQL 2, NodeMailer, Passport, Sequelize, Socket.io, Passport, Morgan, Bcrypt.js, Heroku",
         "href":  "http://testyoselves.herokuapp.com/",
         
@@ -66,7 +67,7 @@ const cards = [
 
         "key": 3,
         "name": "Space Dashboard",
-        "image": "https://spacedashboard.herokuapp.com/",
+        "image": "../images/SD-image.png",
         "technology": "Technology: Express, Node-Sass, Axios, Moment, Heroku",
         "href": "https://spacedashboard.herokuapp.com/",
     },
