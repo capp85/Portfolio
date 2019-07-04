@@ -12,9 +12,9 @@ import CardHeader from "@material-ui/core/CardHeader";
 import CardActions from "@material-ui/core/CardActions";
 import Grid from "@material-ui/core/Grid";
 import Avatar from "@material-ui/core/Avatar";
-// import Container from '@material-ui/core/Container';
 import Typography from "@material-ui/core/Typography";
-import Button from "@material-ui/core/Button";
+// import Button from "@material-ui/core/Button";
+import Link from "@material-ui/core/Link";
 
 const styles = theme => ({
   layout: {
@@ -24,29 +24,37 @@ const styles = theme => ({
     [theme.breakpoints.up(1100 + theme.spacing(3) * 2)]: {
       width: 1100,
       marginLeft: "auto",
-      marginRight: "auto",
+      marginRight: "auto"
     }
   },
   cardGrid: {
-    paddingBottom: theme.spacing(8),
+    paddingBottom: theme.spacing(8)
   },
   card: {
     height: "100%",
     display: "flex",
     flexDirection: "column",
-    backgroundColor: "#005A9C",
+    backgroundColor: "#005A9C"
   },
   cardMedia: {
-    paddingTop: "56.25%", // 16:9
+    paddingTop: "56.25%" // 16:9
   },
   cardContent: {
     flexGrow: 1,
+    color: "#D8D8D8",
   },
   avatar: {
-    backgroundColor: "#D8D8D8",
-    color: "inherit",
+    backgroundColor: "#0C2340",
+    color: "#D8D8D8",
+    fontSize: 30
   },
- 
+  cardHeader: {
+    color: "#D8D8D8",
+    fontSize: 30
+  },
+  technology: {
+    fontSize:20,
+  },
 });
 
 const cards = [
@@ -55,23 +63,26 @@ const cards = [
     name: "Be Prepared",
     image: "../images/BP-image.png",
     technology:
-      "Technology: Mongo, Express, React, Node, Axios, Bcrypt, Heroku, Material UI, JSON, QR Codes",
-    href: "https://be-prepared-project.herokuapp.com/"
+      "Technology: Axios, Mongoose, Express, React, Node, Bcrypt, Material UI, JSON, QR Codes, Heroku",
+    site: "https://be-prepared-project.herokuapp.com/",
+    code: "https://github.com/choco-taco/be-prepared"
   },
   {
     key: 2,
     name: "Test Yo Self",
     image: "../images/TYS-image.png",
     technology:
-      "Technology: Express, Handlebars, Joi, MySQL 2, NodeMailer, Passport, Sequelize, Socket.io, Passport, Morgan, Bcrypt.js, Heroku",
-    href: "http://testyoselves.herokuapp.com/"
+      "Technology: Express, Express Handle-Bars, Joi, MySQL 2, NodeMailer, Passport, Sequelize, Socket.io, Morgan, Bcrypt.js, Heroku",
+    site: "http://testyoselves.herokuapp.com/",
+    code: "https://github.com/choco-taco/testyoselves"
   },
   {
     key: 3,
     name: "Space Dashboard",
     image: "../images/SD-image.png",
     technology: "Technology: Express, Node-Sass, Axios, Moment, Heroku",
-    href: "https://spacedashboard.herokuapp.com/"
+    site: "https://spacedashboard.herokuapp.com/",
+    code: "https://github.com/choco-taco/space-dashboard"
   }
 ];
 
@@ -84,38 +95,43 @@ class Cards extends Component {
 
         <main>
           <div className={classNames(classes.layout, classes.cardGrid)}>
-            {/* <Container  maxWidth="xl"> */}
-            <Grid container spacing={6} id="card">
+            <Grid container spacing={6}>
               {cards.map(card => (
                 <Grid item key={card.key} xs={12} sm={6} md={4}>
                   <Card className={classes.card}>
                     <CardHeader
-                      className={classes.Header}
-                      title={card.name}
+                      title={
+                        <Typography className={classes.cardHeader}>
+                          {card.name}
+                        </Typography>
+                      }
                       avatar={
-                        <Avatar aria-label="number" className={classes.avatar}>
-                          {card.key}
-                        </Avatar>
+                        <Avatar className={classes.avatar}>{card.key}</Avatar>
                       }
                     />
+
                     <CardMedia
                       className={classes.cardMedia}
                       image={card.image}
-                      title="Image title"
                     />
                     <CardContent className={classes.cardContent}>
-                      <Typography>{card.technology}</Typography>
+                      <Typography className={classes.technology}>{card.technology}</Typography>
                     </CardContent>
+
                     <CardActions>
-                      <Button size="medium" color="primary" href={card.href}>
-                        Link
-                      </Button>
+                      <Grid item xs={12}>
+                        <Link variant="h5" color="secondary" href={card.site}>
+                          Site
+                        </Link>
+                      </Grid>
+                      <Link variant="h5" color="secondary" href={card.code}>
+                        Code
+                      </Link>
                     </CardActions>
                   </Card>
                 </Grid>
               ))}
             </Grid>
-            {/* </Container> */}
           </div>
         </main>
       </React.Fragment>

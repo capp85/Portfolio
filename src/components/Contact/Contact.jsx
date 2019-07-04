@@ -1,90 +1,93 @@
-import React from "react";
+import React, { Component } from "react";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Typography from "@material-ui/core/Typography";
-import { makeStyles } from "@material-ui/core/styles";
+import { withStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
+// import Link from "@material-ui/core/Link";
+// import Grid from '@material-ui/core/Grid'
+import Button from "@material-ui/core/Button";
 
-const useStyles = makeStyles(theme => ({
-  icon: {
-    marginRight: theme.spacing(2)
-  },
+const styles = theme => ({
   heroContent: {
-    backgroundColor: "#005A9C",
+    backgroundColor: "#0C2340",
     padding: theme.spacing(8, 0, 6)
-  },
-  heroButtons: {
-    marginTop: theme.spacing(4)
-  },
-  cardGrid: {
-    paddingTop: theme.spacing(8),
-    paddingBottom: theme.spacing(8)
-  },
-  card: {
-    height: "100%",
-    display: "flex",
-    flexDirection: "column"
-  },
-  cardMedia: {
-    paddingTop: "56.25%" // 16:9
-  },
-  cardContent: {
-    flexGrow: 1
   },
   footer: {
     backgroundColor: theme.palette.background.paper,
     padding: theme.spacing(6)
   },
+  button: {
+    margin: theme.spacing(12),
+    fontSize: 30,
+  }
+});
 
-}));
+class Contact extends Component {
+  render(props) {
+    const { classes } = this.props;
 
-export default function Contact() {
-  const classes = useStyles();
+    return (
+      <React.Fragment>
+        <CssBaseline />
 
-  return (
-    <React.Fragment>
-      <CssBaseline />
+        <main>
+          <div className={classes.heroContent}>
+            <Container>
+              <Typography
+                component="h1"
+                variant="h2"
+                align="center"
+                color="secondary"
+                gutterBottom
+              >
+                Via:
+              </Typography>
 
-      <main>
-        {/* Hero unit */}
-        <div className={classes.heroContent}>
-          <Container maxWidth="sm" id="contact">
-            <Typography
-              component="h1"
-              variant="h2"
-              align="center"
-              color="textPrimary"
-              gutterBottom
-            >
-              Contact Me
-            </Typography>
-            <Typography
-              variant="h5"
-              align="center"
-              color="textSecondary"
-              paragraph
-            >
-              Something short and leading about the collection below—its
-              contents, the creator, etc. Make it short and sweet, but not too
-              short so folks don&apos;t simply skip over it entirely.
-            </Typography>
-          </Container>
-        </div>
-      </main>
-      {/* Footer */}
-      <footer className={classes.footer}>
-        <Typography variant="h6" align="center" gutterBottom>
-          Footer
-        </Typography>
-        <Typography
-          variant="subtitle1"
-          align="center"
-          color="textSecondary"
-          component="p"
-        >
-          Something here to give the footer a purpose!
-        </Typography>
-      </footer>
-      {/* End footer */}
-    </React.Fragment>
-  );
+              <Button
+                className={classes.button}
+                align="cneter"
+                color="secondary"
+                href="https://www.linkedin.com/in/josephserrato/"
+              >
+                <i className="fab fa-linkedin">LinkedIn</i>
+              </Button>
+
+              <Button
+                className={classes.button}
+                color="secondary"
+                href="mailto:joseph.serrato@gmail.com"
+              >
+                <i className="fas fa-envelope">Email</i>
+              </Button>
+
+              <Button
+                className={classes.button}
+                color="secondary"
+                href="https://github.com/capp85"
+              >
+                <i className="fab fa-github">GitHub</i>
+              </Button>
+            </Container>
+          </div>
+        </main>
+
+        {/* Footer */}
+        <footer className={classes.footer}>
+          <Typography variant="h6" align="center" gutterBottom>
+            Footer
+          </Typography>
+          <Typography
+            variant="subtitle1"
+            align="center"
+            color="textSecondary"
+            component="p"
+          >
+            Something here to give the footer a purpose!
+          </Typography>
+        </footer>
+        {/* End footer */}
+      </React.Fragment>
+    );
+  }
 }
+export default withStyles(styles)(Contact);

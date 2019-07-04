@@ -1,5 +1,4 @@
 import React from "react";
-import { ParallaxProvider } from 'react-scroll-parallax';
 
 // ******* COMPONENTS *******
 import NavBar from "./components/NavBar/NavBar";
@@ -7,6 +6,8 @@ import ImageContainer from "./components/ImageContainer/ImageContainer";
 import Cards from "./components/Card/Cards";
 import About from "./components/About/About";
 import Contact from "./components/Contact/Contact";
+import PContainer from './components/PContainer/PContainer'
+import CContainer from './components/CContainer/CContainer'
 
 import {
   withStyles,
@@ -18,7 +19,7 @@ import styles from "./App.css";
 const theme = createMuiTheme({
   typography: {
     useNextVariants: true,
-    fontFamily: ["Asap Condensed"]
+    fontFamily: ['Crete Round, serif']
   },
   palette: {
     primary: {
@@ -41,19 +42,18 @@ class App extends React.Component {
     const { classes } = this.props;
 
     return (
-      <ParallaxProvider>
 
       <div className={classes.root}>
         <MuiThemeProvider theme={theme}>
           <NavBar />
-
           <ImageContainer />
-          <Cards />
           <About />
+          <PContainer />
+          <Cards />
+          <CContainer />
           <Contact />
         </MuiThemeProvider>
       </div>
-      </ParallaxProvider>
     );
   }
 }

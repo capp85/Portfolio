@@ -13,7 +13,7 @@ import Button from "@material-ui/core/Button";
 
 const styles = theme => ({
   root: {
-    flexGrow: 1
+    flexGrow: 1,
   },
   button: {
     margin: theme.spacing(2),
@@ -34,7 +34,7 @@ class NavBar extends React.Component {
 
     return (
       <div className={classes.root}>
-        <AppBar position="fixed">
+        <AppBar >
           <Toolbar>
             <Typography
               variant="h4"
@@ -43,11 +43,11 @@ class NavBar extends React.Component {
             >
               Joseph J Serrato
             </Typography>
-            <Button className={classes.button} color="secondary" href="#card">
-              Projects
-            </Button>
             <Button className={classes.button} color="secondary" href="#about">
               About
+            </Button>
+            <Button className={classes.button} color="secondary" href="#card">
+              Portfolio
             </Button>
             <Button className={classes.button} color="secondary" href="#contact">
               Contact

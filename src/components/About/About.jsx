@@ -9,37 +9,36 @@ import Container from "@material-ui/core/Container";
 import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
 import Avatar from "@material-ui/core/Avatar";
+import Grid from "@material-ui/core/Grid";
 
 const styles = theme => ({
   background: {
     position: "relative",
-    // backgroundColor: "#D8D8D8",
-    marginBottom: theme.spacing(4)
+    backgroundColor: theme.palette.grey[800],
+    // marginBottom: theme.spacing(4)
   },
   About: {
-    marginBottom: theme.spacing(4),
-    textAlign: "center",
-    // backgroundPosition: "center"
+    textAlign: "center"
   },
-  Paper: {
-      backgroundColor: "#D8D8D8"
-  },
+    Paper: {
+        backgroundColor: "#D8D8D8"
+    },
   Typography: {
-    marginBottom: theme.spacing(4),
+    // marginBottom: theme.spacing(4),
     textAlign: "center",
     marginLeft: theme.spacing(3),
     marginRight: theme.spacing(3),
-    fontSize: 42
+    fontSize: 20
   },
   bigAvatar: {
+    position: "inherit",
     margin: 10,
     padding: 10,
     // marginLeft: theme.spacing(50),
     // marginRight: theme.spacing(50),
     width: 300,
-    height: 300,
-  },
-
+    height: 300
+  }
 });
 
 class About extends Component {
@@ -49,20 +48,18 @@ class About extends Component {
     return (
       <React.Fragment>
         <CssBaseline />
-        <Container maxWidth="xl" className={classes.background} id="about">
-          <Paper className={classes.Paper}>
-           
-            
-            <Typography variant="h2" className={classes.About}>
-              About Me
-            </Typography>
-            <Typography maxWidth="md" className={classes.Typography}>
-            <Avatar
-              alt="me"
-              src="../images/joe-1.png"
-              className={classes.bigAvatar}
-            />
+        <Container maxwidth="xl" className={classes.background}>
+          <Paper className={classes.Paper} >
+            <Grid container justify="center" alignItems="center">
+              <Avatar
+                alt="me"
+                src="../images/joe-1.png"
+                className={classes.bigAvatar}
+              />
+            </Grid>
 
+            <Typography variant="h2" className={classes.About} />
+            <Typography className={classes.Typography}>
               I was born and raised in Orange County. Recenlty returned to OC
               after three years in the Bay Area managing a logistics warehouse.
               I play bass and drums. I love the Dodgers and Tennesee Titans
@@ -79,8 +76,8 @@ class About extends Component {
         </Container>
       </React.Fragment>
     );
-  };
-};
+  }
+}
 
 About.propTypes = {
   classes: PropTypes.object.isRequired
