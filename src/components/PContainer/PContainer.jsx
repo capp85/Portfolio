@@ -1,16 +1,17 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 
+//******* CSS *********/
 import { withStyles } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
 
+//********* MATERIAL UI **********/
 import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 
 const styles = theme => ({
   mainFeaturedPost: {
-    padding: theme.spacing(15),
     position: "relative",
     backgroundColor: theme.palette.grey[800],
     color: theme.palette.common.white,
@@ -31,9 +32,8 @@ const styles = theme => ({
   mainFeaturedPostContent: {
     color: "#0C2340",
     position: "relative",
-    padding: theme.spacing(4),
     [theme.breakpoints.up("md")]: {
-      padding: theme.spacing(16),
+      padding: theme.spacing(22),
       paddingRight: 0
     }
   }
@@ -46,16 +46,21 @@ class PContainer extends Component {
     return (
       <React.Fragment>
         <CssBaseline />
-        <main id="card">
+        <main>
           <Paper className={classes.mainFeaturedPost}>
             {<img style={{ display: "none" }} alt="background" />}
             <div className={classes.overlay} />
             <Grid container>
-              <Grid item md={6}>
+              <Grid item md={8}>
                 <div className={classes.mainFeaturedPostContent}>
                   <Grid container justify="center" alignItems="center">
-                    <Typography component="h1" variant="h2" gutterBottom>
-                     PORTFOLIO
+                    <Typography
+                      component="h1"
+                      variant="h2"
+                      gutterBottom
+                      id="card"
+                    >
+                      PORTFOLIO
                     </Typography>
                   </Grid>
                 </div>
@@ -63,7 +68,6 @@ class PContainer extends Component {
             </Grid>
           </Paper>
         </main>
-
       </React.Fragment>
     );
   }

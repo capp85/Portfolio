@@ -1,8 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-
-// ******* CSS AND STYLING *******
+// ******* CSS *******
 import { withStyles } from "@material-ui/core/styles";
 
 //******** MATERIAL UI ********
@@ -17,15 +16,14 @@ const styles = theme => ({
   },
   button: {
     margin: theme.spacing(2),
-    fontSize: 20,
+    fontSize: 20
   },
   menuButton: {
     marginRight: 2
   },
   title: {
     flexGrow: 1
-  },
- 
+  }
 });
 
 class NavBar extends React.Component {
@@ -34,10 +32,10 @@ class NavBar extends React.Component {
 
     return (
       <div className={classes.root}>
-        <AppBar >
+        <AppBar>
           <Toolbar>
             <Typography
-              variant="h4"
+              variant="h5"
               color="secondary"
               className={classes.title}
             >
@@ -46,10 +44,16 @@ class NavBar extends React.Component {
             <Button className={classes.button} color="secondary" href="#about">
               About
             </Button>
+
             <Button className={classes.button} color="secondary" href="#card">
               Portfolio
             </Button>
-            <Button className={classes.button} color="secondary" href="#contact">
+
+            <Button
+              className={classes.button}
+              color="secondary"
+              href="#contact"
+            >
               Contact
             </Button>
           </Toolbar>

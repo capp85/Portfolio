@@ -1,20 +1,21 @@
 import React, { Component } from "react";
+
+//******* CSS *********/
 import CssBaseline from "@material-ui/core/CssBaseline";
-import Typography from "@material-ui/core/Typography";
 import { withStyles } from "@material-ui/core/styles";
+
+//********* MATERIAL UI **********/
+import Typography from "@material-ui/core/Typography";
 import Container from "@material-ui/core/Container";
-// import Link from "@material-ui/core/Link";
-// import Grid from '@material-ui/core/Grid'
 import Button from "@material-ui/core/Button";
 
 const styles = theme => ({
   heroContent: {
     backgroundColor: "#0C2340",
-    padding: theme.spacing(8, 0, 6)
   },
   footer: {
     backgroundColor: theme.palette.background.paper,
-    padding: theme.spacing(6)
+    padding: theme.spacing(3)
   },
   button: {
     margin: theme.spacing(12),
@@ -30,22 +31,11 @@ class Contact extends Component {
       <React.Fragment>
         <CssBaseline />
 
-        <main>
-          <div className={classes.heroContent}>
-            <Container>
-              <Typography
-                component="h1"
-                variant="h2"
-                align="center"
-                color="secondary"
-                gutterBottom
-              >
-                Via:
-              </Typography>
-
+        <main >
+          <div className={classes.heroContent} id="contact">
+            <Container >
               <Button
                 className={classes.button}
-                align="cneter"
                 color="secondary"
                 href="https://www.linkedin.com/in/josephserrato/"
               >
@@ -74,7 +64,7 @@ class Contact extends Component {
         {/* Footer */}
         <footer className={classes.footer}>
           <Typography variant="h6" align="center" gutterBottom>
-            Footer
+            Made with React and Material UI
           </Typography>
           <Typography
             variant="subtitle1"
@@ -82,7 +72,7 @@ class Contact extends Component {
             color="textSecondary"
             component="p"
           >
-            Something here to give the footer a purpose!
+            Copyright Joseph J Serrato 2019
           </Typography>
         </footer>
         {/* End footer */}

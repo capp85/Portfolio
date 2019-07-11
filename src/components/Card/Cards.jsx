@@ -2,9 +2,11 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
 
+//******* CSS *********/
 import CssBaseline from "@material-ui/core/CssBaseline";
 import { withStyles } from "@material-ui/core/styles";
 
+//********* MATERIAL UI **********/
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
@@ -13,7 +15,6 @@ import CardActions from "@material-ui/core/CardActions";
 import Grid from "@material-ui/core/Grid";
 import Avatar from "@material-ui/core/Avatar";
 import Typography from "@material-ui/core/Typography";
-// import Button from "@material-ui/core/Button";
 import Link from "@material-ui/core/Link";
 
 const styles = theme => ({
@@ -55,6 +56,11 @@ const styles = theme => ({
   technology: {
     fontSize:20,
   },
+  role: {
+    marginTop:10,
+    fontSize:20,
+  },
+
 });
 
 const cards = [
@@ -65,7 +71,7 @@ const cards = [
     technology:
       "Technology: Axios, Mongoose, Express, React, Node, Bcrypt, Material UI, JSON, QR Codes, Heroku",
     site: "https://be-prepared-project.herokuapp.com/",
-    code: "https://github.com/choco-taco/be-prepared"
+    code: "https://github.com/choco-taco/be-prepared",
   },
   {
     key: 2,
@@ -91,22 +97,22 @@ class Cards extends Component {
     const { classes } = this.props;
     return (
       <React.Fragment>
-        <CssBaseline />
+        <CssBaseline/>
 
-        <main>
+        <main >
           <div className={classNames(classes.layout, classes.cardGrid)}>
-            <Grid container spacing={6}>
+            <Grid container spacing={6} >
               {cards.map(card => (
-                <Grid item key={card.key} xs={12} sm={6} md={4}>
-                  <Card className={classes.card}>
-                    <CardHeader
+                <Grid item key={card.key} xs={12} sm={6} md={4} >
+                  <Card className={classes.card} >
+                    <CardHeader 
                       title={
-                        <Typography className={classes.cardHeader}>
+                        <Typography className={classes.cardHeader} >
                           {card.name}
                         </Typography>
                       }
                       avatar={
-                        <Avatar className={classes.avatar}>{card.key}</Avatar>
+                        <Avatar className={classes.avatar} >{card.key}</Avatar>
                       }
                     />
 
@@ -116,6 +122,7 @@ class Cards extends Component {
                     />
                     <CardContent className={classes.cardContent}>
                       <Typography className={classes.technology}>{card.technology}</Typography>
+
                     </CardContent>
 
                     <CardActions>
