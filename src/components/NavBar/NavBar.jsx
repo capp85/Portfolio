@@ -39,7 +39,7 @@ class NavBar extends React.Component {
               color="secondary"
               className={classes.title}
             >
-              Joseph J Serrato
+              Joseph J. Serrato
             </Typography>
             <Button className={classes.button} color="secondary" href="#about">
               About

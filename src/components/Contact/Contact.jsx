@@ -72,7 +72,7 @@ class Contact extends Component {
             color="textSecondary"
             component="p"
           >
-            Copyright Joseph J Serrato 2019
+            Copyright Joseph J. Serrato 2019
           </Typography>
         </footer>
         {/* End footer */}
