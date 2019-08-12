@@ -54,9 +54,12 @@ class About extends Component {
                 src="../images/joe-1.png"
                 className={classes.bigAvatar}
               />
+              <Typography component="h3">
+              Hi, I am Joseph J Serrato
+              </Typography>
             </Grid>
 
-            <Typography variant="h3" className={classes.About} gutterBottom>
+            <Typography variant="h2" className={classes.About} gutterBottom>
               About:
             </Typography>
 

@@ -5,14 +5,17 @@ import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
 
 //******** MATERIAL UI ********
-import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
-import Typography from "@material-ui/core/Typography";
-import Button from "@material-ui/core/Button";
+import {
+  AppBar,
+  Toolbar,
+  Typography,
+  Container,
+  Link
+} from "@material-ui/core";
 
 const styles = theme => ({
   root: {
-    flexGrow: 1,
+    flexGrow: 1
   },
   button: {
     margin: theme.spacing(2),
@@ -21,44 +24,70 @@ const styles = theme => ({
   menuButton: {
     marginRight: 2
   },
+  navButton: {
+    display: "inline",
+    textAlign: "right"
+  },
   title: {
     flexGrow: 1
   }
 });
+
+const links = [
+  {
+    key: 1,
+    href: "#about",
+    text: "About"
+  },
+  {
+    key: 2,
+    href: "#card",
+    text: "Portfolio"
+  },
+  {
+    key: 3,
+    href: "#contact",
+    text: "Contact"
+  }
+];
 
 class NavBar extends React.Component {
   render() {
     const { classes } = this.props;
 
     return (
-      <div className={classes.root}>
-        <AppBar>
-          <Toolbar>
+      <AppBar>
+        <Container style={{ height: "100%" }}>
+          <Toolbar 
+          variant="dense"
+          className={classes.toolbar}>
             <Typography
+              component="h1"
               variant="h5"
               color="secondary"
+              align="left"
               className={classes.title}
             >
-              Joseph J. Serrato
+              JJS
             </Typography>
-            <Button className={classes.button} color="secondary" href="#about">
-              About
-            </Button>
+            <div className={classes.navButton}>
+              {links.map(link => (
+                <Typography variant="button" align="right" noWrap>
+                  <Link
+                    className={classes.button}
+                    color="secondary"
+                    align="right"
+                    href={link.href}
+                  >
+                    {link.text}
+                  </Link>
+                </Typography>
+              ))}
+            </div>
 
-            <Button className={classes.button} color="secondary" href="#card">
-              Portfolio
-            </Button>
-
-            <Button
-              className={classes.button}
-              color="secondary"
-              href="#contact"
-            >
-              Contact
-            </Button>
           </Toolbar>
-        </AppBar>
-      </div>
+        </Container>
+      </AppBar>
     );
   }
 }

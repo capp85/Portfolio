@@ -6,8 +6,8 @@ import ImageContainer from "./components/ImageContainer/ImageContainer";
 import Cards from "./components/Card/Cards";
 import About from "./components/About/About";
 import Contact from "./components/Contact/Contact";
-import PContainer from './components/PContainer/PContainer'
-import CContainer from './components/CContainer/CContainer'
+import PContainer from "./components/PContainer/PContainer";
+import CContainer from "./components/CContainer/CContainer";
 
 import {
   withStyles,
@@ -19,7 +19,7 @@ import styles from "./App.css";
 const theme = createMuiTheme({
   typography: {
     useNextVariants: true,
-    fontFamily: ['Crete Round, serif']
+    fontFamily: ["Crete Round, serif"]
   },
   palette: {
     primary: {
@@ -42,16 +42,17 @@ class App extends React.Component {
     const { classes } = this.props;
 
     return (
-
       <div className={classes.root}>
         <MuiThemeProvider theme={theme}>
-          <NavBar />
-          <ImageContainer />
-          <About />
-          <PContainer />
-          <Cards />
-          <CContainer />
-          <Contact />
+          <React.Fragment>
+            <NavBar />
+            <ImageContainer />
+            <About />
+            <PContainer />
+            <Cards />
+            <CContainer />
+            <Contact />
+          </React.Fragment>
         </MuiThemeProvider>
       </div>
     );

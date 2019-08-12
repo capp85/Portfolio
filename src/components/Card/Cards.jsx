@@ -7,15 +7,8 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 import { withStyles } from "@material-ui/core/styles";
 
 //********* MATERIAL UI **********/
-import Card from "@material-ui/core/Card";
-import CardContent from "@material-ui/core/CardContent";
-import CardMedia from "@material-ui/core/CardMedia";
-import CardHeader from "@material-ui/core/CardHeader";
-import CardActions from "@material-ui/core/CardActions";
-import Grid from "@material-ui/core/Grid";
-import Avatar from "@material-ui/core/Avatar";
-import Typography from "@material-ui/core/Typography";
-import Link from "@material-ui/core/Link";
+import {Card, CardContent, CardMedia, CardHeader, CardActions,
+Grid, Avatar, Typography, Link }from "@material-ui/core";
 
 const styles = theme => ({
   layout: {
