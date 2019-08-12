@@ -55,6 +55,7 @@ class About extends Component {
                 className={classes.bigAvatar}
               />
             </Grid>
+            Hi, I am Joseph J Serrato
 
             <Typography variant="h3" className={classes.About} gutterBottom>
               About:
