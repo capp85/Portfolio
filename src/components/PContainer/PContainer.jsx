@@ -19,7 +19,7 @@ const styles = theme => ({
     backgroundImage: "url(../images/pencil.png)",
     backgroundSize: "cover",
     backgroundRepeat: "no-repeat",
-    backgroundPosition: "center"
+    backgroundPosition: "center",
   },
   overlay: {
     position: "absolute",
@@ -32,8 +32,8 @@ const styles = theme => ({
   mainFeaturedPostContent: {
     color: "#0C2340",
     position: "relative",
-    [theme.breakpoints.up("md")]: {
-      padding: theme.spacing(22),
+    [theme.breakpoints.up("xs")]: {
+      padding: theme.spacing(15),
       paddingRight: 0
     }
   }

@@ -19,7 +19,8 @@ const styles = theme => ({
     backgroundImage: "url(../images/OC.png)",
     backgroundSize: "cover",
     backgroundRepeat: "no-repeat",
-    backgroundPosition: "center"
+    backgroundPosition: "center",
+    
   },
   overlay: {
     position: "absolute",
@@ -31,8 +32,9 @@ const styles = theme => ({
   },
   mainFeaturedPostContent: {
     position: "relative",
-    [theme.breakpoints.up("md")]: {
-      padding: theme.spacing(15)
+    [theme.breakpoints.up("xs")]: {
+      padding: theme.spacing(15),
+      paddingRight: 0
     }
   }
 });
@@ -46,7 +48,7 @@ class ImageContainer extends Component {
         <CssBaseline />
         <main>
           <Paper className={classes.mainFeaturedPost}>
-            {<img style={{ display: "none" }} alt="background" />}
+            {<img item xs={12} style={{ display: "none" }} alt="background" />}
             <div className={classes.overlay} />
             <Grid container>
               <Grid item md={6}>

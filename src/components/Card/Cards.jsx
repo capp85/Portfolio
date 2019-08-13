@@ -8,7 +8,7 @@ import { withStyles } from "@material-ui/core/styles";
 
 //********* MATERIAL UI **********/
 import {Card, CardContent, CardMedia, CardHeader, CardActions,
-Grid, Avatar, Typography, Link }from "@material-ui/core";
+Grid, Typography, Link }from "@material-ui/core";
 
 const styles = theme => ({
   layout: {
@@ -53,6 +53,9 @@ const styles = theme => ({
     marginTop:10,
     fontSize:20,
   },
+  title: {
+    padding: 20
+  }
 
 });
 
@@ -92,7 +95,14 @@ class Cards extends Component {
       <React.Fragment>
         <CssBaseline/>
 
-        <main >
+        <main > 
+          <Typography
+          component="h1"
+          variant="h3"
+          align="center"
+          className={classes.title}>
+            Portfolio
+          </Typography>
           <div className={classNames(classes.layout, classes.cardGrid)}>
             <Grid container spacing={6} >
               {cards.map(card => (
@@ -100,13 +110,15 @@ class Cards extends Component {
                   <Card className={classes.card} >
                     <CardHeader 
                       title={
-                        <Typography className={classes.cardHeader} >
+                        <Typography 
+                        className={classes.cardHeader}
+                        align="center" >
                           {card.name}
                         </Typography>
                       }
-                      avatar={
-                        <Avatar className={classes.avatar} >{card.key}</Avatar>
-                      }
+                      // avatar={
+                      //   <Avatar className={classes.avatar} >{card.key}</Avatar>
+                      // }
                     />
 
                     <CardMedia

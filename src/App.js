@@ -6,7 +6,7 @@ import ImageContainer from "./components/ImageContainer/ImageContainer";
 import Cards from "./components/Card/Cards";
 import About from "./components/About/About";
 import Contact from "./components/Contact/Contact";
-import PContainer from "./components/PContainer/PContainer";
+// import PContainer from "./components/PContainer/PContainer";
 import CContainer from "./components/CContainer/CContainer";
 
 import {
@@ -48,7 +48,7 @@ class App extends React.Component {
             <NavBar />
             <ImageContainer />
             <About />
-            <PContainer />
+            {/* <PContainer /> */}
             <Cards />
             <CContainer />
             <Contact />
