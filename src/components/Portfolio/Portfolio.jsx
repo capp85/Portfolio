@@ -61,7 +61,6 @@ const styles = theme => ({
 
 const cards = [
   {
-    key: 1,
     name: "Be Prepared",
     image: "../images/BP-image.png",
     technology:
@@ -70,7 +69,6 @@ const cards = [
     code: "https://github.com/choco-taco/be-prepared",
   },
   {
-    key: 2,
     name: "Test Yo Self",
     image: "../images/TYS-image.png",
     technology:
@@ -79,7 +77,6 @@ const cards = [
     code: "https://github.com/choco-taco/testyoselves"
   },
   {
-    key: 3,
     name: "Space Dashboard",
     image: "../images/SD-image.png",
     technology: "Technology: Express, Node-Sass, Axios, Moment, Heroku",
@@ -88,14 +85,14 @@ const cards = [
   }
 ];
 
-class Cards extends Component {
-  render(props) {
+class Portfolio extends Component {
+  render() {
     const { classes } = this.props;
     return (
       <React.Fragment>
         <CssBaseline/>
 
-        <main > 
+        <main id="card"> 
           <Typography
           component="h1"
           variant="h3"
@@ -105,8 +102,8 @@ class Cards extends Component {
           </Typography>
           <div className={classNames(classes.layout, classes.cardGrid)}>
             <Grid container spacing={6} >
-              {cards.map(card => (
-                <Grid item key={card.key} xs={12} sm={6} md={4} >
+              {cards.map((card, index ) => (
+                <Grid item key={index} xs={12} sm={6} md={4} >
                   <Card className={classes.card} >
                     <CardHeader 
                       title={
@@ -116,9 +113,6 @@ class Cards extends Component {
                           {card.name}
                         </Typography>
                       }
-                      // avatar={
-                      //   <Avatar className={classes.avatar} >{card.key}</Avatar>
-                      // }
                     />
 
                     <CardMedia
@@ -131,7 +125,7 @@ class Cards extends Component {
                     </CardContent>
 
                     <CardActions>
-                      <Grid item xs={12}>
+                      <Grid item xs={10}>
                         <Link variant="h5" color="secondary" href={card.site}>
                           Site
                         </Link>
@@ -151,8 +145,8 @@ class Cards extends Component {
   }
 }
 
-Cards.propTypes = {
+Portfolio.propTypes = {
   classes: PropTypes.object.isRequired
 };
 
-export default withStyles(styles)(Cards);
+export default withStyles(styles)(Portfolio);

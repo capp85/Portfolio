@@ -35,17 +35,14 @@ const styles = theme => ({
 
 const links = [
   {
-    key: 1,
     href: "#about",
     text: "About"
   },
   {
-    key: 2,
     href: "#card",
     text: "Portfolio"
   },
   {
-    key: 3,
     href: "#contact",
     text: "Contact"
   }
