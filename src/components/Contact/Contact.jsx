@@ -5,40 +5,25 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 import { withStyles } from "@material-ui/core/styles";
 
 //********* MATERIAL UI **********/
-import {Typography, Container, Link} from "@material-ui/core";
+import { Container, Button } from "@material-ui/core";
 
 const styles = theme => ({
-  contact: {
+  heroContent: {
     backgroundColor: "#0C2340",
-    backgroundSize: "100%"
-    
+    flexGrow: 1,
+    maxWidth: "100%",
+    textAlign: "center",
+    height: "100%",
+    padding: theme.spacing(6)
   },
-
+  linkButton: {
+    display: "inline",
+  },
   button: {
-    margin: theme.spacing(12),
+    margin: theme.spacing(2),
     fontSize: 30,
   }
 });
-
-const contactLinks = [
-  {
-  href: "https://www.linkedin.com/in/josephserrato/",
-  // imgSrc: "/icons/linkedin.png",
-  imgAlt: 'LinkedIn',
-  text: "LinkedIn",
-},
-{
-  href: "mailto:joseph.serrato@gmail.com",
-  imgSrc: "fas fa-envelope",
-  imgAlt: 'Email',
-  text: "Email",
-},
-{
-  href: "https://github.com/capp85",
-  // imgSrc: "fab fa-github",
-  text: "GitHub",
-},
-];
 
 class Contact extends Component {
   render() {
@@ -48,38 +33,15 @@ class Contact extends Component {
       <React.Fragment>
         <CssBaseline />
 
-        <Container id="contact" style={{ width: '100%'}}>
-        <div className={classes.contact}>
-              {contactLinks.map((link, index) => (
-                <Typography variant="button" align="left" noWrap>
-                  <Link
-                    className={classes.button}
-                    color="secondary"
-                    align="left"
-                    href={link.href}
-                  >
-                    <img
-                    src={`${process.env.PUBLIC_URL}${link.imgSrc}`} 
-                    alt={link.imgAlt}                           
-                    />
-                    
-                    {link.text}
-                  </Link>
-                </Typography>
-              ))}
-            </div>
-
-        </Container>
-
-        {/* <main >
-          <div className={classes.heroContent} id="contact">
-            <Container >
+        <Container  className={classes.heroContent} id="contact">
+          <main style={{ height: "100%" }} > 
+            <div className={classes.linkButton} >
               <Button
                 className={classes.button}
                 color="secondary"
                 href="https://www.linkedin.com/in/josephserrato/"
               >
-                <i className="fab fa-linkedin">LinkedIn</i>
+                <i className="fab fa-linkedin"> LinkedIn </i>
               </Button>
 
               <Button
@@ -87,7 +49,7 @@ class Contact extends Component {
                 color="secondary"
                 href="mailto:joseph.serrato@gmail.com"
               >
-                <i className="fas fa-envelope">Email</i>
+                <i className="fas fa-envelope"> Email </i>
               </Button>
 
               <Button
@@ -95,13 +57,11 @@ class Contact extends Component {
                 color="secondary"
                 href="https://github.com/capp85"
               >
-                <i className="fab fa-github">GitHub</i>
+                <i className="fab fa-github"> GitHub </i>
               </Button>
-            </Container>
-          </div>
-        </main> */}
-
-       
+            </div>
+          </main>
+        </Container>
       </React.Fragment>
     );
   }
