@@ -12,6 +12,7 @@ import Typography from "@material-ui/core/Typography";
 
 const styles = theme => ({
   mainFeaturedPost: {
+    padding: theme.spacing(5),
     position: "relative",
     backgroundColor: theme.palette.grey[800],
     color: theme.palette.common.white,
@@ -32,7 +33,7 @@ const styles = theme => ({
     color: "#005A9C",
     position: "relative",
     [theme.breakpoints.up("md")]: {
-      padding: theme.spacing(22),
+      padding: theme.spacing(18),
       paddingRight: 0
     }
   }
@@ -49,16 +50,19 @@ class CContainer extends Component {
           <Paper className={classes.mainFeaturedPost}>
             {
             <img 
+            item xs={12}
             style={{ display: "none" }} 
             alt="background" 
             />
             }
             <div className={classes.overlay} />
             <Grid container>
-              <Grid item md={8}>
+              <Grid item md={6}>
                 <div className={classes.mainFeaturedPostContent}>
                   <Grid container justify="center" alignItems="center">
-                    <Typography  variant="h2" gutterBottom >
+                    <Typography 
+                    component="h1"
+                    variant="h2" gutterBottom >
                      CONTACT ME
                     </Typography>
                   </Grid>

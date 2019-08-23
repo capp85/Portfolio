@@ -3,11 +3,12 @@ import React from "react";
 // ******* COMPONENTS *******
 import NavBar from "./components/NavBar/NavBar";
 import ImageContainer from "./components/ImageContainer/ImageContainer";
-import Cards from "./components/Card/Cards";
+import Portfolio from "./components/Portfolio/Portfolio";
 import About from "./components/About/About";
 import Contact from "./components/Contact/Contact";
-import PContainer from "./components/PContainer/PContainer";
+// import PContainer from "./components/PContainer/PContainer";
 import CContainer from "./components/CContainer/CContainer";
+import Footer from "./components/Footer/Footer"
 
 import {
   withStyles,
@@ -48,10 +49,11 @@ class App extends React.Component {
             <NavBar />
             <ImageContainer />
             <About />
-            <PContainer />
-            <Cards />
+            {/* <PContainer /> */}
+            <Portfolio />
             <CContainer />
             <Contact />
+            <Footer />
           </React.Fragment>
         </MuiThemeProvider>
       </div>

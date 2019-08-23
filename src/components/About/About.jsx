@@ -6,11 +6,14 @@ import { withStyles } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
 
 //********* MATERIAL UI **********/
-import Container from "@material-ui/core/Container";
-import Paper from "@material-ui/core/Paper";
-import Typography from "@material-ui/core/Typography";
-import Avatar from "@material-ui/core/Avatar";
-import Grid from "@material-ui/core/Grid";
+import {
+  Container,
+  Paper,
+  Typography,
+  Avatar,
+  Grid,
+  Box
+} from "@material-ui/core";
 
 const styles = theme => ({
   background: {
@@ -18,8 +21,10 @@ const styles = theme => ({
     backgroundColor: theme.palette.grey[800]
   },
   About: {
-    marginLeft: theme.spacing(3),
+    marginLeft: theme.spacing(2),
     marginBottom: theme.spacing(2),
+    textAlign: "center",
+    padding: 5
   },
   Paper: {
     backgroundColor: "#D8D8D8"
@@ -27,8 +32,8 @@ const styles = theme => ({
   Typography: {
     textAlign: "center",
     marginLeft: theme.spacing(3),
-    marginRight: theme.spacing(3),
-    fontSize: 20
+    marginRight: theme.spacing(3)
+    // fontSize: 20
   },
   bigAvatar: {
     position: "inherit",
@@ -44,30 +49,57 @@ class About extends Component {
     const { classes } = this.props;
 
     return (
-      <React.Fragment >
+      <React.Fragment>
         <CssBaseline />
-        <Container maxwidth="xl" className={classes.background} >
-          <Paper className={classes.Paper} >
+        <Container
+          maxWidth="xl"
+          item
+          xs={12}
+          className={classes.background}
+          style={{ height: "100%" }}
+        >
+          <Paper className={classes.Paper}>
+          <Box >
+              <Typography
+                component="h1"
+                variant="h4"
+                className={classes.About}
+                gutterBottom
+              >
+                About Me
+              </Typography>
+            </Box>
+
             <Grid container justify="center" alignItems="center" id="about">
+            <Box textAlign="center">
               <Avatar
                 alt="me"
                 src="../images/joe-1.png"
                 className={classes.bigAvatar}
               />
-              <Typography component="h3">
-              Hi, I am Joseph J Serrato
-              </Typography>
+                <Box my={{ xs: 1 }}>
+                  <Typography 
+                  component="h3" 
+                  variant="h5">
+                    Hi, I am Joseph J Serrato
+                  </Typography>
+                </Box>
+              </Box>
             </Grid>
 
-            <Typography variant="h2" className={classes.About} gutterBottom>
-              About:
-            </Typography>
-
-            <Typography variant="body1" className={classes.Typography} >
-            Full stack web developer completely infatuated with front end development. Loves how front end development is another way to express art, but with ones and zeros. Experienced operations manager with strong communication and time management skills, especially under pressure.
+            <Box my={{ xs: 3}}>
+              <Typography 
+              component="h2"
+              variant="h4" 
+              className={classes.Typography}>
+                Full stack web developer completely infatuated with front end
+                development. Loves how front end development is another way to
+                express art, but with ones and zeros. Experienced operations
+                manager with strong communication and time management skills,
+                especially under pressure.
               </Typography>
-              <br/>
-
+              <br />
+            </Box>
           </Paper>
         </Container>
       </React.Fragment>
